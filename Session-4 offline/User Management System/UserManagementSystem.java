@@ -1,5 +1,6 @@
 package com.simplilearn.management;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class UserManagementSystem {
@@ -41,23 +42,36 @@ public class UserManagementSystem {
 			case 2:
 			//update a record
 				System.out.println("**************UPDATE RECORD**************");
+				
+				 
 			break;
 			
 			case 3:
 			//delete a record
 				System.out.println("**************DELETE RECORD**************");
+				
+				System.out.println("Enter Id for delete");
+				int id= sc.nextInt();
+				if(dao.deleteUser(id)) {
+					System.out.println("User deleted");
+				}else {
+					System.out.println("No user avaialble to delete with id "+id);
+				}
+				
 			break;
 			
 			case 4:
 			//retirve a record
 				System.out.println("**************FETCH RECORD**************");
+				List<User> list= dao.getAllUsers();
+				System.out.println(list);
 				break;
 				
 			
 			case 5:
 			//retrive by id
 				System.out.println("**************FETCH RECORD BY ID**************");
-				break;
+				
 	
 		
 		}
