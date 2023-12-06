@@ -42,7 +42,33 @@ public class UserManagementSystem {
 			case 2:
 			//update a record
 				System.out.println("**************UPDATE RECORD**************");
+				//User,id
+				sc.nextLine();
+				System.out.println("enter your name");
+				String u_name=sc.nextLine();
 				
+		 
+				System.out.println("enter your email");
+				String u_email=sc.nextLine();
+				
+			 
+				System.out.println("enter your username");
+				String u_username=sc.nextLine();
+				
+				System.out.println("enter your Id");
+				int u_id=sc.nextInt();
+				
+				User user=dao.updateUser(new User(u_name, u_email, u_username),u_id);
+			 
+				if(user!=null) {
+					 
+					System.out.println(user.toString());
+					System.out.println("Record Updated SUccessfully");
+				}
+				else {
+					System.out.println("Error While Inserting a Record");
+				}
+				 				
 				 
 			break;
 			
@@ -71,8 +97,12 @@ public class UserManagementSystem {
 			case 5:
 			//retrive by id
 				System.out.println("**************FETCH RECORD BY ID**************");
+				System.out.println("Enter Id to search for user");
+				int search_id= sc.nextInt();
 				
-	
+				 User u=dao.getUserById(search_id);
+				 System.out.println(u.toString());
+				
 		
 		}
 		
