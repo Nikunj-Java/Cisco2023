@@ -35,6 +35,22 @@ if(error!=null){
 
 <a href="implicit.jsp?error=1">USe of Exception Object</a>
 
+<br>
+<br>
+
+<%
+	String serverName=request.getServerName();
+	out.print("Server Name: "+serverName+"<br>");
+	out.print("Servlet Name: "+config.getServletName()+"<br>");
+	out.print("Servlet Info: "+application.getServerInfo()+"<br>");
+	out.print("Page Details: "+page.toString()+"<br>");
+	
+	pageContext.setAttribute("userid", "test@gmail.com");
+	
+	out.print("Page Context Attribute: "+pageContext.getAttribute("userid"));
+
+%>
+
  
 
 </body>
