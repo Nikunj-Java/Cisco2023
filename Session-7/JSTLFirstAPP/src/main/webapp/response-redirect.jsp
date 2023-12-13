@@ -8,11 +8,18 @@
 </head>
 <body>
 
-<a href="test.jsp">Click Here</a>
+<h1>Response Page</h1>
 
-<br>
 
-<a href="implicit.jsp">Implicit Object Example</a>
+<%
+String office=request.getParameter("office");
+
+if(office!=null){
+	out.print("Value of Office: "+office);
+}else{
+	out.print("No Office Value Available");
+}
+%>
 
 </body>
 </html>
