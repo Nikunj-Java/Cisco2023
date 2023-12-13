@@ -14,5 +14,8 @@
 
 <a href="implicit.jsp">Implicit Object Example</a>
 
+
+<a href="core.jsp">JSTL-Core Example</a>
+
 </body>
 </html>
