@@ -1,0 +1,119 @@
+**********************************************
+Creating Database:
+**********************************************
+
+> use temp
+----------------------------------------------
+
+**********************************************
+Creating Collections
+**********************************************
+>db.createCollection("your_name_of_collection")
+
+Result: {ok:1}
+
+
+**********************************************
+DROP Collections
+**********************************************
+>db.your_name_of_collection.drop();
+
+Result: true
+
+
+**********************************************
+DROP Database
+**********************************************
+>db.dropDatabase("Your_Database_name");
+
+Result: {ok:,dropped:'Your_Database_name'}
+
+
+
+**********************************************
+Create Record in Database
+**********************************************
+>db.collection_name.insertOne({JSON Formate})
+
+eg: db.student.insertOne({name:"Nikunj Soni",email:"nikunj@gmail.com"})
+
+Result: {
+
+	acknowledge: true,
+	insertedId:scfsdjcsgdcjsvjjskdv
+
+}
+
+
+**********************************************
+Retrive Record in Database
+**********************************************
+>db.collection_name.find()
+
+eg: db.student.find()
+
+Result: {
+
+	id:
+	name:
+	email:
+
+}
+
+
+**********************************************
+Retrive Record by value in Database
+**********************************************
+>db.collection_name.find({jSON})
+
+eg: db.student.find({name:"Nikunj Soni"})
+
+Result: {
+
+	id:"Nikunj Soni"
+	name:"nikunj@gmail.com"
+	email:"asdfghjkrtyui2345"
+
+}
+
+
+**********************************************
+Update Record by value in Database
+**********************************************
+>db.collection_name.updateOne({find_by_Value in JSON Formate},$set{value to be update in JSON formate})
+
+eg: db.student.updateOne({name:"Nikunj Soni"},$set{email:"abcd@testmail.com"})
+
+Result: {
+
+	id:"Nikunj Soni"
+	name:"abcd@testmail.com"
+	email:"asdfghjkrtyui2345"
+
+}
+
+
+**********************************************
+Delete Record by value in Database
+**********************************************
+>db.collection_name.deleteOne({JSON formate})
+
+eg: db.student.deleteOne({name:"Nikunj Soni"})
+
+Result: {
+
+	acknowledged: true,
+ 	 deletedCount: 1
+
+}
+
+
+
+
+
+
+
+
+ 
+
+
