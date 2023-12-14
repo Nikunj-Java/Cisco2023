@@ -8,7 +8,8 @@
 </head>
 <body>
 
-<a href="core.jsp">JSTL Core Tags</a>
+<a href="core.jsp">JSTL Core Tags</a><br><br>
+<a href="sql.jsp">SQL Tags</a>
 
 </body>
 </html>
