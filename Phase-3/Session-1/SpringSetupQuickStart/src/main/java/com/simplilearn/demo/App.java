@@ -1,6 +1,7 @@
 package com.simplilearn.demo;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -28,6 +29,14 @@ public class App
     	System.out.println("Physics: "+m.getPhy());
     	System.out.println("Chemistry: "+m.getChem());
     	System.out.println("Mathematics: "+m.getMaths());
+    	
+    	
+    	//event Handling
+
+    	ConfigurableApplicationContext context1= new ClassPathXmlApplicationContext("main-servlet.xml");
+    	context1.start();
+    	context1.stop();
+    	
     	
     	
     	 
