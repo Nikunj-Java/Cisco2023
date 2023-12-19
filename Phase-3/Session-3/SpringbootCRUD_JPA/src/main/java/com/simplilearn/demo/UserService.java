@@ -23,9 +23,16 @@ public class UserService {
 		return repo.findAll();
 	}
 	
+	//method to get user by id
+	public User getUserById(int id) {
+		if(repo.findById(id).isPresent())
+			return repo.findById(id).get();
+		else
+			return null;
+	}
 	//method to delete user
 	
-	//method to get user by id
+	
 	
 	//method to update user by id
 
