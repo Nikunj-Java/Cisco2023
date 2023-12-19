@@ -31,8 +31,14 @@ public class UserService {
 			return null;
 	}
 	//method to delete user
-	
-	
+	public boolean deleteUser(int id) {
+		if(repo.findById(id).isPresent()) {
+			repo.deleteById(id);
+			return true;
+		}else{
+			return false;
+		}
+	}
 	
 	//method to update user by id
 
