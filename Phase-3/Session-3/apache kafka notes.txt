@@ -1,0 +1,19 @@
+> download apache kafka from:https://kafka.apache.org/downloads
+> choose: scala 2.12 or 2.13
+
+> once it is dowmnloaded extract it to some folder and rename the folder with the name "kafka"
+
+start zookeeper
+----------------------
+
+> open cmd> bin\windows\zookeeper-server.bat config\zookeeper.properties
+
+open another cmd
+
+start kafka server
+-----------------------
+> bin\windows\kafka-server-start.bat config\server.properties
+----------------------------------------------------------------------------------------
+
+let's create topic
+> bin\windows\kafka-toppics.bat --create --topic firsttopic --bootstart-server localhost:9092
