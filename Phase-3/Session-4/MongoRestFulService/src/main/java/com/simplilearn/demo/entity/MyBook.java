@@ -3,7 +3,7 @@ package com.simplilearn.demo.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "mybooks")
+@Document(collection = "myBook")
 public class MyBook {
 	@Id
 	private String id;
