@@ -36,9 +36,28 @@ public class MyBookService {
 		
 	}
 	
-	//delete the book by id
-	
-	//update the book by id
+	//method to delete user
+		public boolean deleteBook(String id) {
+			if(repo.findById(id).isPresent()) {
+				repo.deleteById(id);
+				return true;
+			}else{
+				return false;
+			}
+		}
+		
+		//method to update user by id
+		public MyBook updateUser(MyBook book,String id) {
+			if(repo.findById(id).isPresent()) {
+				MyBook old=repo.findById(id).get();
+				old.setTitle(book.getTitle());
+				old.setAuthor(book.getAuthor());
+				old.setYear(book.getYear());
+				return repo.save(old);
+			}else {
+				return null;
+			}
+		}
 	
 	 
 
