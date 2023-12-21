@@ -6,14 +6,18 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIf;
 import org.junit.jupiter.api.condition.EnabledForJreRange;
 import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import org.junit.jupiter.api.condition.EnabledOnJre;
+import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.JRE;
+import org.junit.jupiter.api.condition.OS;
 
+@DisplayName("Conditional Test")
 class Conditional_JRE_TestCases {
 
 	@Test
@@ -65,5 +69,22 @@ class Conditional_JRE_TestCases {
 	boolean myCondition() {
 		return true;
 	}
-
+	
+	@Test
+	@EnabledOnOs({OS.WINDOWS})
+	void test5() {
+		System.out.println("Conditional Test On Windows");
+	}
+	
+	@Test
+	@EnabledOnOs({OS.LINUX})
+	void test6() {
+		System.out.println("Conditional Test On Linux");
+	}
+	
+	@Test
+	@EnabledOnOs({OS.MAC})
+	void test7() {
+		System.out.println("Conditional Test On MAC");
+	}
 }
