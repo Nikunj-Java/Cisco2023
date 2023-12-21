@@ -1,0 +1,81 @@
+goto> any Springboot CRUD App>
+
+pom.xml file
+
+and add below dependency
+---------------------------------------------
+
+<!-- Swagger Dependency -->
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+----------------------------------------------------------------
+
+also check parent tag in pom.xml file....it must be like below
+
+version must be 2.6.7
+
+
+<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.6.7</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+
+------------------------------------------------------------
+
+save and update the maven
+
+
+goto applications.properties file and add below path
+-----------------------------------------------------
+spring.mvc.pathmatch.matching-strategy=ANT_PATH_MATCHER
+
+
+
+goto>application
+
+---------------------------------package com.simplilearn.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@SpringBootApplication
+@EnableSwagger2
+@Configuration
+@ComponentScan("com.simplilearn.demo")
+public class SpringbootCrudJpaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringbootCrudJpaApplication.class, args);
+	}
+	@Bean
+	public Docket allApis() {
+		return new Docket(DocumentationType.SWAGGER_2)
+				.select().apis(RequestHandlerSelectors.basePackage("com.simplilearn.demo"))
+				.build();
+	}
+
+}
+------------------------------------------------------------
+update and Save the Project
