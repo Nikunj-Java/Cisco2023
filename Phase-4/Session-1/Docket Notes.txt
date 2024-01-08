@@ -93,8 +93,32 @@ STEP:3 PULL GIT HUB IMAGES(CUSTOM IMAGES)
 
 -----Let's run the container ------------------
 > sudo docker run -d --name mycontainer -p 80:80 myimage
+> sudo docker run -d -p 80:80 myimage
 
 > curl localhost
 
 
 index.php file will be opened here
+
+
+
+*****************************************************************************
+STEP:4 PUSH THE IMAGES TO THE DOCKER HUB
+*****************************************************************************
+
+> FOLLOW STEP 3
+> sudo docker tag myimage nikunj0510/cisco_image
+
+> sudo docker login
+	username:
+	password:       (The password that u will enter will not be visible due to security reasons)
+
+	message: successfully logged in
+
+> sudo docker push nikunj0510/cisco_image
+
+
+
+goto> docker.com check your respositories
+
+ new repository will be prepared automatically with the name: cisco_image
