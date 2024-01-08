@@ -122,3 +122,44 @@ STEP:4 PUSH THE IMAGES TO THE DOCKER HUB
 goto> docker.com check your respositories
 
  new repository will be prepared automatically with the name: cisco_image
+
+
+
+***************************************************************************
+STEP:5 CREATING MYSQL DATABASE IN DOCKER CONTAINER
+***************************************************************************
+
+> sudo docker pull mysql
+> sudo docker images
+> sudo docker run --name my-app-db -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 mysql
+
+if its not working remove the container
+sudo docker rm my-app-db
+> sudo docker run --name my-app-db -e MYSQL_ROOT_PASSWORD=password -d -p 3305:3306 mysql
+
+verify the running container
+> sudo docker ps
+
+connect to mysql DataBase
+----------------------------
+> mysql -u root -h 127.0.0.1 -P 3305 -p
+
+enter password: passsword       (password will not be visible to you)
+
+if all ok u will see mysql tab like 'mysql>'
+
+that means we are ready to go and work with Mysql On Docker container
+
+
+> show databases;
+
+create database
+---------------------------------
+> create database cisco;
+
+create table Customers
+---------------------------------
+create table Customers(cid int primary key auto_increment, name varchar(20), phone varchar(20),email varchar(100));
+
+Insert Some Records
+-----------------------
