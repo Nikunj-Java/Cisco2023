@@ -58,4 +58,43 @@ check the name of the container using
 > sudo docker container ls
 check the name and use the same name to stop the container
 > sudo docker rm name_of_container
+> sudo docker rm -f name_of_container
 
+
+STEP:7 REMOVE IMAGES
+-----------------------------------
+> sudo docker rmi name_of_image
+>  sudo docker rmi -f name_of_image
+
+Exercise:2 
+-----------------------------------------------------------
+pull the ready images available
+
+> sudo dokcer pull ubuntu
+
+> sudo docker pull mysql
+
+> sudo docker pull mysql:5.7
+
+
+**************************************************************************
+STEP:3 PULL GIT HUB IMAGES(CUSTOM IMAGES)
+**************************************************************************
+
+> git clone https://github.com/Nikunj-Java/docker_master.git
+> ls (to check availabilty of folders)
+> cd docker_master
+
+
+------let's prepare the image in a docker comntainer-----------
+> sudo docker build -t myimage .    (. is medatory)
+> sudo docker images
+
+
+-----Let's run the container ------------------
+> sudo docker run -d --name mycontainer -p 80:80 myimage
+
+> curl localhost
+
+
+index.php file will be opened here
