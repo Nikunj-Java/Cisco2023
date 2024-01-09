@@ -1,0 +1,112 @@
+1. open your labs> eclips
+
+2. open your eclips>new>javaproject> choose jdk 11> create project
+
+3. create java class with the name 'MyApp'
+
+4. MyApp.java
+
+package com.simplilearn.demo;
+
+import java.util.Scanner;
+
+public class MyApp {
+	
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		 
+		
+		 
+			System.out.println("Welcome to CashBack App");
+			int [] cashBack= {20,200,120,500,60,80};
+			int luckyNumber=0;
+			
+			try {
+				luckyNumber=sc.nextInt();
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("Error: "+e.getMessage());
+			}
+			
+			System.out.println("For your lucky number "+luckyNumber+" CashBack Earned is "+cashBack[luckyNumber]);
+			
+		sc.close();
+		System.out.println("Thankyou for  Playing Lucky Number Cashback");
+	}
+
+}
+
+
+
+5. RIght click on your project and create file with the name  'Dockerfile'
+6. Dockerfile
+------------------------
+FROM openjdk:11
+
+RUN mkdir /MyCashBackApp
+
+COPY bin/ /MyCashBackApp
+
+WORKDIR /MyCashBackApp
+
+CMD  java MyApp
+---------------------
+or you can goto> dockerhub.com > search for open jdk and copyu the tags
+
+7.rightclick on your project>show in file explorer> copy the project> create one directory in your lab desktop with anyname like 'MyJavaApp' and paste the same
+
+8. right click on the folder from desktop and open the terminal
+
+9. move to your folder----> cd MyJavaApp
+
+10. sudo docker build -t my-docker-java-app:1.0
+
+11. sudo docker images
+
+----------------------------------------------------------------------------------------------------------
+
+goto your MyApp.java Code
+
+
+package com.simplilearn.demo;
+
+import java.util.Scanner;
+
+public class MyApp {
+	
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		int choice=-1;
+		
+		while(true) {
+			System.out.println("Welcome to CashBack App");
+			int [] cashBack= {20,200,120,500,60,80};
+			int luckyNumber=0;
+			
+			try {
+				luckyNumber=sc.nextInt();
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("Error: "+e.getMessage());
+			}
+			
+			System.out.println("For your lucky number "+luckyNumber+" CashBack Earned is "+cashBack[luckyNumber]);
+			System.out.println("Enter 0 to Exit");
+			
+			choice=sc.nextInt();
+			if(choice==0) {
+				break;
+			}
+		}
+		sc.close();
+		System.out.println("Thankyou for  Playing Lucky Number Cashback");
+	}
+
+}
+
+
+do the same procedure again and build new image with version 2.0
+
+> sudo docker build -t my-docker-java-app:2.0
+> sudo docker images
+
