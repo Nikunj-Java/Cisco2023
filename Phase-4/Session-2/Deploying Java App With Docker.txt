@@ -59,7 +59,7 @@ or you can goto> dockerhub.com > search for open jdk and copyu the tags
 
 9. move to your folder----> cd MyJavaApp
 
-10. sudo docker build -t my-docker-java-app:1.0
+10. sudo docker build -t my-docker-java-app:1.0 .
 
 11. sudo docker images
 
@@ -107,6 +107,6 @@ public class MyApp {
 
 do the same procedure again and build new image with version 2.0
 
-> sudo docker build -t my-docker-java-app:2.0
+> sudo docker build -t my-docker-java-app:2.0 .
 > sudo docker images
 
