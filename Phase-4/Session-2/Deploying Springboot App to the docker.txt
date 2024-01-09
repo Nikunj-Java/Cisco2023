@@ -1,0 +1,19 @@
+> Create Springboot app like : https://github.com/Nikunj-Java/SpringBootDockerApp/tree/master
+
+> upload to your github repository (Make sure to change Java Version 11)
+
+
+> open your lab> terminal
+
+> clone the repository here
+
+1. git clone https://github.com/Nikunj-Java/SpringBootDockerApp/tree/master
+2. cd SpringBootDockerApp
+3. ls
+4. mvn clean install
+5. build the image in docker
+---- sudo docker -t springapp:1.0 .
+6. deploy the container
+----sudo docker run --name estore -d -p 8082:8082 springapp:1.0
+7. check the output
+----goto>browser>localhost:8082/greet/Nikunj Soni
