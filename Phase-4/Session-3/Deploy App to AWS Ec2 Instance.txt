@@ -1,0 +1,34 @@
+1. Prepare AWS Instance(Ubuntu Server 22.04 LTS (HVM),ssd Volume Type)
+2. Create New Key to Connect with Moba-xterm
+3. Download .pem key to your machine and keep it under one folder
+4. Add Network security: port no:8080 with CUstom TCp Rule
+5. Goto>Eclips>Choose Any Existing App (Springboot App with JDk 11,17)
+	-goto Run>
+		>maven clean
+		>maven install
+		>maven build
+6. open moba x-term> move to the folder where u have saved the .pem key
+7. copy the ssh key from instnce>connect>ssh>example key and paste and hit enter to connectin moba x-term
+7. Goto>>eclips>yourproject>target>app_name-SNAPSHOT-0.0.1.jar file and drag it to the moba x-term
+
+install java
+--------------------
+> sudo apt update
+> sudo install openjdk-17-jdk openjdk-17-jre
+> java-version
+
+
+install maven
+-------------------
+> sudo apt update
+> sudo apt-get install maven
+
+Run Your Applcation
+--------------------
+> java -jar app_name-SNAPSHOT-0.0.1.jar
+
+CHECK THE OUTPUT
+------------------
+>once tomcat is started goto>AWSinstance>click on it>copy Public IPV4 address:8080/greet/Welcome to AWS
+
+> you will see the output
