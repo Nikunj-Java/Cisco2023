@@ -1,0 +1,46 @@
+DOCKER SWARM
+********************************************************************************************************************
+- Docker Swarm is an Orchestration management tool that runs on Docker Applications
+
+- it helps end-users in creating and deploying a cluster of docker nodes.
+
+- Each node of a docker Swarm is a Docker Daemon, and All daemons interact using the DOCKER API.
+
+- Each COntainer within the swarm can be deployed and accessed by the nodes of same cluster
+
+- if one of the container fails we can use the swarm to correct that failure
+
+- it can reschedule containers on node failures
+
+- manage multiple containers running on different host
+*********************************************************************************************************************
+
+set the permisiions
+> sudo chmod 666 /var/run/docker.sock
+
+STEP:1 INITIATE DOCKER SWARM
+> sudo docker swarm init 
+
+message:
+
+Swarm initialized: current node (rmt6eywhr35np9np6t0y2f14g) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-14d230d4ymxt7tlxiwot20yytge6bv58c15bhxaqg683mzje3n-c2kort70kx9o9q0b0u0ohgkq2 172.31.23.192:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+STEP:2 CREATE SERVICE IN THIS DOCKER SWARM
+
+> sudo docker service create -p 80:80 --name myservice myimage
+
+>curl localhost
+
+goto>browser>awsec2 publicip:80
+you will see the output
+
+STEP: SCALE THE DOCKER CONTAINER ON DOCKER SWARM
+> sudo docker service scale myservice=3
+> sudo docker service ls
+> sudo docker service ps myservice
