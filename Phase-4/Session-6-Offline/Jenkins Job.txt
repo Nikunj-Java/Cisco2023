@@ -1,0 +1,21 @@
+FOR CONTINUOUS INTEGRATION (CI)
+------------------------------------------
+
+1. click on insall suggested plugins
+2. provide your credentials
+3. welcome to jenkins
+4. manage plugins> maven integration> click on install suggested plugins>maven integration>click on install without restart
+5. goto>dashboard>create>new job>select freestyle project>give name>click on ok 
+6> give description
+7. sourcemanangement
+
+	GIT:
+	URL:
+	BRANCHES TO BUILD : */master or */main
+8. build trigger
+	POLL SCM:
+	H/2 * * * *
+
+9. click on Apply and Save
+
+10. BUILD THE PROJECT
