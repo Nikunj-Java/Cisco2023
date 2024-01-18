@@ -1,0 +1,57 @@
+*************************************************************************
+AWS UBUNTU INSTANCE
+*************************************************************************
+1. Prepare AWS Instance(Ubuntu Server 22.04 LTS (HVM),ssd Volume Type)
+2. Create New Key to Connect with Moba-xterm
+3. Download .pem key to your machine and keep it under one folder
+4. Add Network security: port no:8080 with CUstom TCp Rule
+5. create instance
+6. connect your local machine using AWS ClI or Mobax-term
+
+*************************************************************************
+Docker installtion
+*************************************************************************
+goto>google>search for how to install docker on ubuntu
+Link: https://docs.docker.com/engine/install/ubuntu/
+
+> sudo apt-get update
+> sudo apt-get install ca-certificates curl gnupg
+> sudo install -m 0755 -d /etc/apt/keyrings
+> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+> sudo chmod a+r /etc/apt/keyrings/docker.gpg
+> echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+> sudo apt-get update
+
+> sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+> sudo docker version
+
+**************************************************************************
+STEP:2 JDK INSTALLATION
+**************************************************************************
+> sudo apt-get update
+> sudo apt-get install openjdk-11-jdk
+
+**************************************************************************
+STEP:3 MAVEN INSTALLATION
+**************************************************************************
+> sudo apt-get update
+> sudo apt-get install maven
+> mvn -version
+
+
+**************************************************************************
+STEP:4 JENKINS INSTALLATION
+**************************************************************************
+link: https://www.jenkins.io/doc/book/installing/linux/
+> sudo apt-get update
+> sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+> echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+> sudo apt-get update
+> sudo apt-get install jenkins
+
+START JENKINS
+----------------
+> sudo service jenkins start
+> sudo service jenkins stop
+
+goto> AWS>EC2 instance>COPY PUBLIC IP ADDRESS:8080
