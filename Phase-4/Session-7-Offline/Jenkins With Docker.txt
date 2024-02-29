@@ -48,10 +48,26 @@ link: https://www.jenkins.io/doc/book/installing/linux/
 > echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
 > sudo apt-get update
 > sudo apt-get install jenkins
+OR
+> sudo apt-get install jenkins --httpPort=8081
 
 START JENKINS
 ----------------
 > sudo service jenkins start
+
+STOP JENKINS
+------------------------------
 > sudo service jenkins stop
 
+PERMISSIONS
+----------------------------
+> sudo chmod 777 /var/run/docker.sock
+
+
+
 goto> AWS>EC2 instance>COPY PUBLIC IP ADDRESS:8080
+
+
+PASSWORD
+------------------------------
+> sudo cat /var/lib/jenkins/secrets/initialAdminPassword

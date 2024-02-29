@@ -14,7 +14,7 @@
 install java
 --------------------
 > sudo apt update
-> sudo install openjdk-17-jdk openjdk-17-jre
+> sudo apt install openjdk-17-jdk openjdk-17-jre
 > java-version
 
 
